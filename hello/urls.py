@@ -20,7 +20,11 @@ from django.http import HttpResponse
 def hello(request):
     return HttpResponse("Hello Django!")
 
+def hello_python(request):
+    return HttpResponse("Hello python!!")
+
 urlpatterns = [
-    path('^$', hello),
+    path('', hello),
+    path('python/', hello_python),
     path('admin/', admin.site.urls),
 ]
