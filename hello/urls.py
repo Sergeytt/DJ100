@@ -30,6 +30,15 @@ def hello(request):
 def hello_python(request):
 	return render(request, 'python.html')
 
+def http(request):
+	print(request.path)
+	print(request.method)
+	print(request.POST)
+	print(request.GET)
+	print(request.GET['some'])
+	response = render(request, 'http.html')
+	return response
+
 def sum_two(request, a, b):
 	s = int(a) + int(b)
 	print(a)
@@ -39,6 +48,7 @@ def sum_two(request, a, b):
 urlpatterns = [
     path('', hello),
 	path('python/', hello_python),
+	path('http/', http),
 #   re_path(r'^python/(?P<some>\w+)/$', hello_python),
 	re_path(r'^sum/(?P<a>\w+)/(?P<b>\w+)/$', sum_two),
     path('admin/', admin.site.urls),

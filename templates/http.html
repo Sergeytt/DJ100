@@ -34,9 +34,9 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="/python/">Python</a></li>
-		<li><a href="/http/">Http</a></li>
+		<li class="active"><a href="/http/">Http</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -44,7 +44,10 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>Hello World!</h1>
+        <form method="post">
+		<input type="text" name="some"/>
+		<input type="submit" />
+	</form>
       </div>
 
     </div> <!-- /container -->
