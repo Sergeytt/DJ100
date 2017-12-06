@@ -39,7 +39,7 @@ def sum_two(request, a, b):
 urlpatterns = [
     path('', hello),
 	path('python/', hello_python),
-#    re_path(r'^python/(?P<some>\w+)/$', hello_python),
+#   re_path(r'^python/(?P<some>\w+)/$', hello_python),
 	re_path(r'^sum/(?P<a>\w+)/(?P<b>\w+)/$', sum_two),
     path('admin/', admin.site.urls),
 ]
