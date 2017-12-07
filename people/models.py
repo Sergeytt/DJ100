@@ -1,0 +1,9 @@
+from django.db import models
+
+# Create your models here.
+
+class people(models.Model):
+	name = models.CharField(max_length=100)
+	surname = models.CharField(max_length=100)
+	course = models.CharField(max_length=100)
+

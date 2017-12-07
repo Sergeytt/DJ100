@@ -15,35 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from django.http import HttpResponse
-from django.shortcuts import render
-
-#def hello(request):
-#    return HttpResponse("Hello Django!")
-
-def hello(request):
-	return render(request, 'index.html')
-
-#def hello_python(request, some):
-#    return HttpResponse("Hello python!! " + some)
-
-def hello_python(request):
-	return render(request, 'python.html')
-
-def http(request):
-	print(request.path)
-	print(request.method)
-	print(request.POST)
-	print(request.GET)
-	print(request.GET['some'])
-	response = render(request, 'http.html')
-	return response
-
-def sum_two(request, a, b):
-	s = int(a) + int(b)
-	print(a)
-	print(b)
-	return HttpResponse(s)
+from people.views import hello, hello_python, http,sum_two
 
 urlpatterns = [
     path('', hello),
@@ -53,3 +25,4 @@ urlpatterns = [
 	re_path(r'^sum/(?P<a>\w+)/(?P<b>\w+)/$', sum_two),
     path('admin/', admin.site.urls),
 ]
+
